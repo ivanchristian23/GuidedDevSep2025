@@ -3,6 +3,14 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEM
 		viewConfigDiff: /**SCHEMA_VIEW_CONFIG_DIFF*/[
 			{
 				"operation": "merge",
+				"name": "SaveButton",
+				"values": {
+					"size": "large",
+					"iconPosition": "only-text"
+				}
+			},
+			{
+				"operation": "merge",
 				"name": "CardContentWrapper",
 				"values": {
 					"padding": {
@@ -131,6 +139,29 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEM
 				"parentName": "SideAreaProfileContainer",
 				"propertyName": "items",
 				"index": 1
+			},
+			{
+				"operation": "insert",
+				"name": "TicketPrice",
+				"values": {
+					"layoutConfig": {
+						"column": 1,
+						"colSpan": 1,
+						"row": 3,
+						"rowSpan": 1
+					},
+					"type": "crt.NumberInput",
+					"label": "$Resources.Strings.PDS_UsrTicketPrice_a6l4ngs",
+					"labelPosition": "auto",
+					"control": "$PDS_UsrTicketPrice_a6l4ngs",
+					"readonly": false,
+					"visible": false,
+					"placeholder": "",
+					"tooltip": ""
+				},
+				"parentName": "SideAreaProfileContainer",
+				"propertyName": "items",
+				"index": 2
 			},
 			{
 				"operation": "insert",
@@ -281,7 +312,11 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEM
 					"multiline": false,
 					"label": "$Resources.Strings.PDS_UsrComment_ewjn70y",
 					"labelPosition": "auto",
-					"control": "$PDS_UsrComment_ewjn70y"
+					"control": "$PDS_UsrComment_ewjn70y",
+					"visible": false,
+					"readonly": false,
+					"placeholder": "",
+					"tooltip": ""
 				},
 				"parentName": "GeneralInfoTabContainer",
 				"propertyName": "items",
@@ -303,11 +338,94 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEM
 					"control": "$PDS_UsrManager_pf93jrf",
 					"listActions": [],
 					"showValueAsLink": false,
-					"controlActions": []
+					"controlActions": [],
+					"visible": true,
+					"readonly": false,
+					"placeholder": "",
+					"tooltip": ""
 				},
 				"parentName": "GeneralInfoTabContainer",
 				"propertyName": "items",
 				"index": 7
+			},
+			{
+				"operation": "insert",
+				"name": "Country",
+				"values": {
+					"layoutConfig": {
+						"column": 1,
+						"colSpan": 1,
+						"row": 5,
+						"rowSpan": 1
+					},
+					"type": "crt.ComboBox",
+					"label": "$Resources.Strings.PDS_UsrCountry_lgvhm2c",
+					"labelPosition": "auto",
+					"control": "$PDS_UsrCountry_lgvhm2c",
+					"listActions": [],
+					"showValueAsLink": false,
+					"controlActions": [],
+					"visible": true,
+					"readonly": false,
+					"placeholder": "",
+					"tooltip": "",
+					"valueDetails": null
+				},
+				"parentName": "GeneralInfoTabContainer",
+				"propertyName": "items",
+				"index": 8
+			},
+			{
+				"operation": "insert",
+				"name": "ManagerEmail",
+				"values": {
+					"layoutConfig": {
+						"column": 2,
+						"colSpan": 1,
+						"row": 5,
+						"rowSpan": 1
+					},
+					"type": "crt.EmailInput",
+					"label": "#ResourceString(ManagerEmail_label)#",
+					"control": "$PDS_UsrManagerEmail_85ouk4t",
+					"labelPosition": "auto",
+					"placeholder": "",
+					"tooltip": "",
+					"needHandleSave": false,
+					"caption": "#ResourceString(ManagerEmail_caption)#",
+					"readonly": true,
+					"visible": true
+				},
+				"parentName": "GeneralInfoTabContainer",
+				"propertyName": "items",
+				"index": 9
+			},
+			{
+				"operation": "insert",
+				"name": "City",
+				"values": {
+					"layoutConfig": {
+						"column": 1,
+						"colSpan": 1,
+						"row": 6,
+						"rowSpan": 1
+					},
+					"type": "crt.ComboBox",
+					"label": "$Resources.Strings.PDS_UsrCity_a3xias3",
+					"labelPosition": "auto",
+					"control": "$PDS_UsrCity_a3xias3",
+					"listActions": [],
+					"showValueAsLink": false,
+					"controlActions": [],
+					"visible": true,
+					"readonly": false,
+					"placeholder": "",
+					"tooltip": "",
+					"valueDetails": null
+				},
+				"parentName": "GeneralInfoTabContainer",
+				"propertyName": "items",
+				"index": 10
 			}
 		]/**SCHEMA_VIEW_CONFIG_DIFF*/,
 		viewModelConfigDiff: /**SCHEMA_VIEW_MODEL_CONFIG_DIFF*/[
@@ -325,21 +443,85 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEM
 					"PDS_UsrPrice_wzxjjs3": {
 						"modelConfig": {
 							"path": "PDS.UsrPrice"
+						},"validators": {
+
+							"MySuperValidator": {
+
+								"type": "usr.DGValidator",
+
+								"params": {
+
+									"minValue": 50,
+
+									"message": "#ResourceString(PriceCannotBeLess)#"
+
+								}
+
+							}
+
 						}
 					},
 					"PDS_UsrLength_s4tgxpt": {
 						"modelConfig": {
 							"path": "PDS.UsrLength"
+						},"validators": {
+
+							"MySuperValidator": {
+
+								"type": "usr.DGValidator",
+
+								"params": {
+
+									"minValue": 3,
+
+									"message": "#ResourceString(LengthCannotBeLess)#"
+
+								}
+
+							}
+
 						}
 					},
 					"PDS_UsrCrewNumber_yb0x9zb": {
 						"modelConfig": {
 							"path": "PDS.UsrCrewNumber"
+						},"validators": {
+
+							"MySuperValidator": {
+
+								"type": "usr.DGValidator",
+
+								"params": {
+
+									"minValue": 1,
+
+									"message": "#ResourceString(CrewNumberCannotBeLess)#"
+
+								}
+
+							}
+
 						}
 					},
 					"PDS_UsrPassengersNumber_gj8rd7g": {
 						"modelConfig": {
 							"path": "PDS.UsrPassengersNumber"
+						},"validators": {
+
+							"MySuperValidator": {
+
+								"type": "usr.DGValidator",
+
+								"params": {
+
+									"minValue": 1,
+
+									"message": "#ResourceString(PassengerNumberCannotBeLess)#"
+
+								}
+
+							}
+
 						}
 					},
 					"PDS_UsrCaptain_vrqi6nh": {
@@ -365,6 +547,26 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEM
 					"PDS_UsrComment_ewjn70y": {
 						"modelConfig": {
 							"path": "PDS.UsrComment"
+						}
+					},
+					"PDS_UsrCountry_lgvhm2c": {
+						"modelConfig": {
+							"path": "PDS.UsrCountry"
+						}
+					},
+					"PDS_UsrCity_a3xias3": {
+						"modelConfig": {
+							"path": "PDS.UsrCity"
+						}
+					},
+					"PDS_UsrTicketPrice_a6l4ngs": {
+						"modelConfig": {
+							"path": "PDS.UsrTicketPrice"
+						}
+					},
+					"PDS_UsrManagerEmail_85ouk4t": {
+						"modelConfig": {
+							"path": "PDS.UsrManagerEmail_85ouk4t"
 						}
 					}
 				}
@@ -398,7 +600,13 @@ define("UsrYacht_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHEM
 					"PDS": {
 						"type": "crt.EntityDataSource",
 						"config": {
-							"entitySchemaName": "UsrYacht"
+							"entitySchemaName": "UsrYacht",
+							"attributes": {
+								"UsrManagerEmail_85ouk4t": {
+									"path": "UsrManager.Email",
+									"type": "ForwardReference"
+								}
+							}
 						},
 						"scope": "page"
 					}

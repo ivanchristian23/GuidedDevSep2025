@@ -4,13 +4,16 @@
 		<Items>
 			<Item Name="Caption" Value="Yacht" />
 			<Item Name="Columns.UsrCaptain.Caption" Value="Captain" />
+			<Item Name="Columns.UsrCity.Caption" Value="City" />
 			<Item Name="Columns.UsrComment.Caption" Value="Comment" />
+			<Item Name="Columns.UsrCountry.Caption" Value="Country" />
 			<Item Name="Columns.UsrCrewNumber.Caption" Value="Crew number" />
 			<Item Name="Columns.UsrLength.Caption" Value="Length, ft" />
 			<Item Name="Columns.UsrManager.Caption" Value="Manager" />
 			<Item Name="Columns.UsrName.Caption" Value="Name" />
 			<Item Name="Columns.UsrPassengersNumber.Caption" Value="Passengers number" />
 			<Item Name="Columns.UsrPrice.Caption" Value="Price per day, USD" />
+			<Item Name="Columns.UsrTicketPrice.Caption" Value="Ticket price, USD" />
 			<Item Name="Columns.UsrYachtDriveTypeField.Caption" Value="Drive type" />
 			<Item Name="Columns.UsrYachtStatusField.Caption" Value="Status" />
 		</Items>

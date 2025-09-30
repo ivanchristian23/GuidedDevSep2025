@@ -3,14 +3,22 @@
 	<Group Type="String">
 		<Items>
 			<Item Name="Caption" Value="Yacht form page" />
+			<Item Name="LocalizableStrings.addRecord_5zep097_caption.Value" Value="Add new" />
 			<Item Name="LocalizableStrings.addRecord_dc7ffzb_caption.Value" Value="Add new" />
 			<Item Name="LocalizableStrings.addRecord_dpb8ocv_caption.Value" Value="Add new" />
 			<Item Name="LocalizableStrings.addRecord_g2laiqh_caption.Value" Value="Add new" />
 			<Item Name="LocalizableStrings.addRecord_howc4bq_caption.Value" Value="Add new" />
 			<Item Name="LocalizableStrings.addRecord_pmfjkf6_caption.Value" Value="Add new" />
+			<Item Name="LocalizableStrings.addRecord_tjdl7ln_caption.Value" Value="Add new" />
 			<Item Name="LocalizableStrings.addRecord_x1htpqz_caption.Value" Value="Add new" />
 			<Item Name="LocalizableStrings.addRecord_z5jbcck_caption.Value" Value="Add new" />
 			<Item Name="LocalizableStrings.addRecord_zsgq8xz_caption.Value" Value="Add new" />
+			<Item Name="LocalizableStrings.CrewNumberCannotBeLess.Value" Value="We need more crews less than 1 is not enought pirate :&gt;" />
+			<Item Name="LocalizableStrings.LengthCannotBeLess.Value" Value="Length no 3 below hehe" />
+			<Item Name="LocalizableStrings.ManagerEmail_caption.Value" Value="Email address" />
+			<Item Name="LocalizableStrings.ManagerEmail_label.Value" Value="Manager Email" />
+			<Item Name="LocalizableStrings.PassengerNumberCannotBeLess.Value" Value="What are these passengers no sale?! get atleast more than 1" />
+			<Item Name="LocalizableStrings.PriceCannotBeLess.Value" Value="Price no less than 50 pls" />
 			<Item Name="LocalizableStrings.PushMeButton_caption.Value" Value="Push me!" />
 		</Items>
 	</Group>
